@@ -4,76 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A playful faker.js project focused on random name display.">
-    <meta name="author" content="Aaron Meese"><html>
+    <meta name="author" content="Aaron Meese">
     <link rel="icon" type="image/png" href="favicon.png">
     
     <title>My List</title>
     <script src="faker.min.js" type="text/javascript"></script>
+    <script src="addNames.js" type="text/javascript"></script>
     <link href="bootstrap.css" media="all" rel="stylesheet" type="text/css" />
-    <style>
-      h1 {
-        display: table;
-        margin: 25px auto;
-      }
-      body {
-        max-width: 1200px;
-        margin: 0 auto;
-        overflow-x: hidden;
-      }
-      ol {
-        display: inline-block;
-        width: 25%;
-        margin-left: 8%;
-      }
-      @media (max-width: 1000px) {
-        h1 {
-          margin-left: 25px;
-        }
-        ol {
-          width: 100%;
-          margin-bottom: 10px;
-          margin-left: 25px;
-          font-size: 26px;
-        }
-      }
-    </style>
+    <link href="index.css" rel="stylesheet" type="text/css" />
   <body>
     <h1>People I care about more than you:</h1>
     <ol id="listOne"></ol>
-    <ol id="listTwo" start="50"></ol>
-    <ol id="listThree" start="100"></ol>
-
-    <script>
-      let counter = 0,
-          limit = 25,
-          interval = setInterval(randomName, 117.5);
-      let listOne = document.getElementById("listOne"),
-          listTwo = document.getElementById("listTwo"),
-          listThree = document.getElementById("listThree");
-      listTwo.start = limit + 1;
-      listThree.start = limit * 2 + 1;
-      
-      // NOTE: The other ol elements move down with the first one,
-      // so it looks like they are populated from the bottom up.
-      // I should come back to fix that.
-      function randomName() {
-        let randomName = faker.name.findName();
-        let randomHTML = "<li>" + randomName + "</li>";
-        let mobile = window.innerWidth < 1000;
-
-        if (counter < limit) {
-          listOne.innerHTML += randomHTML;
-        } else if (counter < limit * 2 && !mobile) {
-          listTwo.innerHTML += randomHTML;
-        } else if (counter < limit * 3 && !mobile) {
-          listThree.innerHTML += randomHTML;
-        } else {
-          clearInterval(interval);
-          alert("I am not your biggest fan :)");
-        }
-        
-        counter++;
-      }
-    </script>
+    <ol id="listTwo"></ol>
+    <ol id="listThree"></ol>
   </body>
 </html>

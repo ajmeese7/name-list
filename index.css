@@ -1,0 +1,26 @@
+h1 {
+    display: table;
+    margin: 25px auto;
+}
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+ol {
+    display: block;
+    float: left;
+    width: 25%;
+    margin-left: 8%;
+}
+@media (max-width: 1000px) {
+    h1 {
+        margin-left: 25px;
+    }
+    ol {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-left: 25px;
+        font-size: 26px;
+    }
+}
